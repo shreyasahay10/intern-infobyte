@@ -10,13 +10,14 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                sh 'pip install pytest'
+                sh 'pytest'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying project...'
+                echo 'Deployment done!'
             }
         }
     }
